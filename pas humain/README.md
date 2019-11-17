@@ -1,7 +1,7 @@
 # Pas humain
 
 Ici, l'intro du challenge est un très bon indice.
-Le text ressemble parfaitement à un texte classique (pas de chiffres ou caractères spéciaux), simplement les lettre ne correspondent à rien.
+Le text ressemble parfaitement à un texte classique (pas de chiffres ou caractères spéciaux), simplement les lettres ne correspondent à rien.
 
 On peut donc supposer dans un premier temps qu'il s'agit d'un codage par décalage de lettre (Code de César), le plus classique étant le ROT13.
 
