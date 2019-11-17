@@ -10,7 +10,7 @@ Comme c'est impossible de le faire à la main, on doit écrire un bout de code q
 <?php
 
 define("URL", "https://emoji.ctf.ineat.fr/");
-define("COOKIE", "PHPSESSID=d73bf78437641505c297658972cad342");
+define("COOKIE", "PHPSESSID=xxxxxxxxxxxxxx");
 
 $target1 = 0;
 $target2 = 0;
