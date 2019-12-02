@@ -53,7 +53,7 @@ if( strpos($_POST["h1"], "hello") !== false > 0 && $hash == "0" ) {
 ```
 
 Notre mot de passe est donc hash en MD5 avant de passer dans un if un peu étrange.  
-La suite demande en réalité quelques connaissances (ou recherches) sur les bizarreries de PHP. Il faut savoir qu'il existe un bug relativement connu de PHP concernant les comparaisons de hash qu'on appelle les "Magic Hashes" (il existe probablement un nom plus sérieux que je ne connais malheureusement pas). Plutôt que tout - mal - réexplique, je vous laisse jetter [un coup d'oeil ici](https://www.whitehatsec.com/blog/magic-hashes/) pour en apprendre un peu plus.
+La suite demande en réalité quelques connaissances (ou recherches) sur les bizarreries de PHP. Il faut savoir qu'il existe un bug relativement connu de PHP concernant les comparaisons de hash qu'on appelle les "Magic Hashes" (il existe probablement un nom plus sérieux que je ne connais malheureusement pas). Plutôt que tout - mal - réexpliquer, je vous laisse jetter [un coup d'oeil ici](https://www.whitehatsec.com/blog/magic-hashes/) pour en apprendre un peu plus.
 
 Globalement pour résumer, quand un hash débute par "0e" et que - pour une raison obscule - on le compare à "0", le test passera systématiquement. Il nous faut donc trouver une chaine qui preduit un MD5 qui :
 * Commence par "0e"
