@@ -23,7 +23,7 @@ Disallow: https://website.ctf.ineat.fr/__secured-backup.tar.gz.gpg
 Disallow: https://website.ctf.ineat.fr/INEAT{th1s-1s-n07-th3-fl4g} <-- l'humour de Jordan
 ```
 
-Le premier et le troisième lien sont de baits, on s'intéresse doncplus en détail à notre archive. Il s'agit d'un `.tar.gz` chiffré avec GPG. Faute de clé, il va falloir casser le mot de passe.
+Le premier et le troisième lien sont de baits, on s'intéresse donc plus en détail à notre archive. Il s'agit d'un `.tar.gz` chiffré avec GPG. Faute de clé, il va falloir casser le mot de passe.
 
 [A compléter]
 
@@ -46,7 +46,7 @@ Le fichier `index.php` devrait contenir notre bonheur. Après avoir remplacé le
 $hash = hash("md5", $_POST["h1"]);
 
 //Funny php :)
-if(  strpos($_POST["h1"], "hello") !== false > 0 && $hash == "0") {
+if( strpos($_POST["h1"], "hello") !== false > 0 && $hash == "0" ) {
   echo "<!-- Bien joué le flag est ".$flag."-->";
 }
 
