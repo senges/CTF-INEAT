@@ -17,14 +17,14 @@ refexe somme toute plutôt efficace je dois dire : `<h1 class="corb-flag">INEAT{
 
 > Cette méthode n'est certes pas la plus simple, mais elle a le mérite de retracer un peu plus en détail un scema d'exploitation d'injection SQL ;)
 
-On est donc ici face au même site que le précédent. Il faut donc trouver une méthode pour exploiter ça un peu plus en profondeur.
-Partons donc à la recherche des colonnes de notre bdd :
+On est ici face au même site que le précédent. Il faut donc trouver une méthode pour exploiter ça un peu plus en profondeur.
+On va alors essayer de partir à la recherche des colonnes de notre bdd :
 
 ```
 curl -s "https://moulin.ctf.ineat.fr/" --data "username=' UNION SELECT 1 #&password=" | grep INEAT
 ```
 
-Parfait, notre champ username est donc injectable : `Bienvenue 1!`  
+Parfait, notre champ username est injectable : `Bienvenue 1!`  
 On peut maintenant commencer à retrouver la structure de notre bdd au travers de ce champ :
 
 ```text
