@@ -15,6 +15,8 @@ refexe somme toute plutôt efficace je dois dire : `<h1 class="corb-flag">INEAT{
 
 ## Partie 2
 
+> Cette méthode n'est certes pas la plus simple, mais elle a le mérite de retracer un peu plus en détail un scema d'exploitation d'injection SQL ;)
+
 On est donc ici face au même site que le précédent. Il faut donc trouver une méthode pour exploiter ça un peu plus en profondeur.
 Partons donc à la recherche des colonnes de notre bdd :
 
