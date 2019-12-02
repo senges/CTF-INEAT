@@ -7,8 +7,8 @@ Personellement, j'ai utilisé `diresearch.py` dispo sur github.
 python3 dirsearch.py -u https://website.ctf.ineat.fr -e php,asc,prk -r
 ```
 
-> [09:39:55] 301 -  169B  - /files  ->  http://website.ctf.ineat.fr/files/
-> [09:39:55] 403 -  555B  - /files/
-> [09:39:58] 200 -   21KB - /index.php
-> [09:40:07] 200 -    1KB - /robots.txt
+> [09:39:55] 301 -  169B  - /files  ->  http://website.ctf.ineat.fr/files/  
+> [09:39:55] 403 -  555B  - /files/  
+> [09:39:58] 200 -   21KB - /index.php  
+> [09:40:07] 200 -    1KB - /robots.txt  
 
