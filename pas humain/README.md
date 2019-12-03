@@ -1,7 +1,7 @@
 # Pas humain
 
 Ici, l'intro du challenge est un très bon indice.
-Le text ressemble parfaitement à un texte classique (pas de chiffres ou caractères spéciaux), simplement les lettres ne correspondent à rien.
+Le texte ressemble parfaitement à un texte classique (pas de chiffres ou caractères spéciaux), simplement les lettres ne correspondent à rien.
 
 On peut donc supposer dans un premier temps qu'il s'agit d'un codage par décalage de lettre (Code de César), le plus classique étant le ROT13.
 
@@ -35,6 +35,8 @@ RGnt: "5qn5768o-10r"
 </ugzy>
 ```
 
+En convertissant le texte retourné avec la même technique : 
+
 ```text
 HTTP/1.1 400 Bad Request
 Server: nginx/1.16.1
@@ -56,7 +58,7 @@ ETag: "5da5768b-10e"
 </html>
 ```
 
-on va donc essayer d'envoyer une requête GET HTTP avec un host.
+On va donc essayer d'envoyer une requête GET HTTP avec un host, le tout en ROT13.
 
 ```
 GET / HTTP/1.1

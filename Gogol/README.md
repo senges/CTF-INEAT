@@ -59,7 +59,7 @@ Maintenant qu'on a le nombre de colonne, reste plus qu'à chercher un peu dans l
 
 ![gogol1_1](gogol1_1.png)
 
-on pourrait facilement retrouver le nom des tables mais le plus simple reste d'essayer avec des nom de tables / champs classiques :
+On pourrait facilement retrouver le nom des tables mais le plus simple reste d'essayer avec des nom de tables / champs classiques :
 
 
 ```
@@ -92,7 +92,7 @@ foreach ($filter as $banned) {
     }
 } 
 ```
- Or il s'avère que, contrairement à `preg_replace()`, la fonction `strpos()` est case sensitive - contrairement à notre requête SQL qui se fout royalement des minuscules/majuscules. On peut donc contourner le filtre relativement simpelment :
+ Or il s'avère que, contrairement à `preg_replace()`, la fonction `strpos()` est case sensitive - contrairement à notre requête SQL qui se fout royalement des minuscules/majuscules. On peut donc contourner le filtre relativement simplement :
 
 ```
 ' and 0 UnioN SelECt 1,2,3#

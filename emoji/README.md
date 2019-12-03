@@ -6,6 +6,8 @@ Comme c'est impossible de le faire à la main, on doit écrire un bout de code q
 > Par soucis de gains de temps, je suis parti sur un code php avec une façon discutable de parser l'arbre DOM..
 > C'est probablement la  pire façon de résoudre ce challenge, mais ça fonctionne
 
+##Solution php
+
 ```php
 <?php
 
@@ -87,4 +89,31 @@ curl_setopt($ch,CURLOPT_RETURNTRANSFER, true);
 echo curl_exec($ch);
 
 ?>
+```
+
+##Solution python
+```python
+import requests
+import time
+
+url = "https://emoji.ctf.ineat.fr/"
+
+s = requests.session()
+r = s.get(url).text
+
+recherche = r.split("nombre de ")[1]
+
+r1,r2 = recherche.split(" et de ")
+
+nb1 = r.count(r1) - 2
+nb2 = r.count(r2[0]) - 2
+
+r = s.post(url,data={"nb1":nb1,"nb2":nb2}).text
+
+print(r)
+```
+
+##Solution javascript
+```javascript
+Max 6 ou 7 lignes
 ```
