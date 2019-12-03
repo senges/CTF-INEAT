@@ -23,7 +23,7 @@ Disallow: https://website.ctf.ineat.fr/__secured-backup.tar.gz.gpg
 Disallow: https://website.ctf.ineat.fr/INEAT{th1s-1s-n07-th3-fl4g} <-- l'humour de Jordan
 ```
 
-Le premier et le troisième lien sont de baits, on s'intéresse donc plus en détail à notre archive. Il s'agit d'un `.tar.gz` chiffré avec GPG. Faute de clé, il va falloir casser le mot de passe.
+Le premier et le troisième lien sont des baits, on s'intéresse donc plus en détail à notre archive. Il s'agit d'un `.tar.gz` chiffré avec GPG. Faute de clé, il va falloir casser le mot de passe.
 
 Pour ce faire, on va pouvoir utiliser une petite implémentation custom en bash et une wordlist basique comme `rockyou.txt` :
 
