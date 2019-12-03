@@ -25,7 +25,28 @@ Disallow: https://website.ctf.ineat.fr/INEAT{th1s-1s-n07-th3-fl4g} <-- l'humour 
 
 Le premier et le troisième lien sont de baits, on s'intéresse donc plus en détail à notre archive. Il s'agit d'un `.tar.gz` chiffré avec GPG. Faute de clé, il va falloir casser le mot de passe.
 
-[A compléter]
+Pour ce faire, on va pouvoir utiliser une petite implémentation custom en bash et une wordlist basique comme `rockyou.txt` :
+
+```
+
+#!/bin/bash
+
+while read match; do
+        gpg --batch --passphrase "$pass" "__secured-backup.tar.gz.gpg" &> /dev/null
+        if [ "$?" == 0 ]; then
+                 echo "SPass found : $match"
+                break
+        fi
+done < "rockyou.txt"
+fi
+```
+
+Il existe probablement des implémentations un peu (beaucoup) plus efficaces, mais avec un peu de patience on trouve le mot de passe : `supersexy`. On peut maintenant déchiffrer l'archive et décompresser l'archive.
+
+```
+$  gpg --output secured-backup.tar.gz --decrypt __secured-backup.tar.gz.gpg
+$  tar -xzvf secured-backup.tar.gz
+```
 
 On a donc extrait les fichiers suivants :
 
