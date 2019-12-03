@@ -15,7 +15,7 @@ refexe somme toute plutôt efficace je dois dire : `<h1 class="corb-flag">INEAT{
 
 ## Partie 2
 
-> Cette méthode n'est certes pas la plus simple, mais elle a le mérite de retracer un peu plus en détail un scema d'exploitation d'injection SQL ;)
+> Cette méthode n'est certes pas la plus simple, mais elle a le mérite de retracer un peu plus en détail un schéma d'exploitation d'injection SQL ;)
 
 On est ici face au même site que le précédent. Il faut donc trouver une méthode pour exploiter ça un peu plus en profondeur.
 On va alors essayer de partir à la recherche des colonnes de notre bdd :
@@ -24,7 +24,8 @@ On va alors essayer de partir à la recherche des colonnes de notre bdd :
 curl -s "https://moulin.ctf.ineat.fr/" --data "username=' UNION SELECT 1 #&password=" | grep INEAT
 ```
 
-Parfait, notre champ username est injectable : `Bienvenue 1!`  
+Parfait, notre champ username est injectable : `Bienvenue 1!`.
+Nous savons également que la requête renvoie une colonne.
 On peut maintenant commencer à retrouver la structure de notre bdd au travers de ce champ :
 
 ```text
@@ -60,8 +61,8 @@ Rien de très intéresant de ce côté, on va donc chercher une table qui contie
 <-- my_secret_table -->
 ```
 
-Ah, on tiens quelque chose d'intéressant (qu'on aurait pu avoir un peu plus tôt si on avait été un peu patient, j'en convient..)  
-On peut vérifier que notre table a bien un colonne "flag" pour en avoir le coeur net :
+Ah, on tient quelque chose d'intéressant (qu'on aurait pu avoir un peu plus tôt si on avait été un peu patient, j'en conviens..)  
+On peut vérifier que notre table a bien une colonne "flag" pour en avoir le coeur net :
 
  ```
 ' UNION SELECT column_name FROM information_schema.columns WHERE table_name = 'my_secret_table' #
