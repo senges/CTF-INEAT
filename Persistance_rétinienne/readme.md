@@ -1,12 +1,11 @@
 
 
-# Persistance rétinienne
-=======================================
+## Persistance rétinienne
 
 ### Détails du challenge
 
 Points : 50
-Catégorie : ## Stéganographie
+Catégorie : Stéganographie
 Fichier : [cats_eyes.png](https://ctf.ineat.fr/files/a4ef5b3688b2f7047122ff768b25734f/cats_eyes.png)
 
 ```text
