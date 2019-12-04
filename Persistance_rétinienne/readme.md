@@ -4,9 +4,9 @@
 
 ### Détails du challenge
 
-Points : 50
-Catégorie : Stéganographie
-Fichier : [cats_eyes.png](https://ctf.ineat.fr/files/a4ef5b3688b2f7047122ff768b25734f/cats_eyes.png)
+Points : 50<br/>
+Catégorie : Stéganographie<br/>
+Fichier : [cats_eyes.png](https://ctf.ineat.fr/files/a4ef5b3688b2f7047122ff768b25734f/cats_eyes.png)<br/>
 
 ```text
 Un laboratoire de recherche scientifique a été attaqué et certains documents ont été volés.
