@@ -30,7 +30,7 @@ La première chose à faire est d'ouvrir le fichier BMP avec Audacity (glisser-d
 L'erreur suggère d'importer le fichier brut: "Import Raw".
 J'ai importé le fichier comme suit: File > Import > Import Raw
 
-<center>[import_options.png](import_options.png)</center><br>
+<center>![import_options.png](import_options.png)</center><br>
 
 Le texte est un peu trop rapide, ralentissons-le (Effets> Changer la vitesse):
 
