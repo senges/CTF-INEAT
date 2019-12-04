@@ -6,7 +6,7 @@ Comme c'est impossible de le faire à la main, on doit écrire un bout de code q
 > Par soucis de gains de temps, je suis parti sur un code php avec une façon discutable de parser l'arbre DOM..
 > C'est probablement la  pire façon de résoudre ce challenge, mais ça fonctionne
 
-##Solution php
+## Solution php
 
 ```php
 <?php
@@ -91,7 +91,7 @@ echo curl_exec($ch);
 ?>
 ```
 
-##Solution python
+## Solution python
 ```python
 import requests
 import time
@@ -113,7 +113,7 @@ r = s.post(url,data={"nb1":nb1,"nb2":nb2}).text
 print(r)
 ```
 
-##Solution javascript
+## Solution javascript
 ```javascript
 Max 6 ou 7 lignes
 ```
