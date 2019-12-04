@@ -1,7 +1,7 @@
-# Authentification en cour
+# Authentification en cours
 
-Pour ce challenge, il faut connaitre un peu le fonctionnement de emacs (ou d'autres outils sous linux) qui a une facheuse tendance 
-à nous générer des fichiers cachés de sauvegarde selon : `<nom du fichier>~`
+Pour ce challenge, il faut connaitre un peu le fonctionnement de emacs (ou d'autres outils sous linux) qui a une facheuse tendance à générer des fichiers cachés lorsqu'on édite un fichier.
+Les nouveaux fichiers temporaires sont suffixés avec "~" selon : `<nom du fichier>~`
 
 On peut donc supposer ici que nos fichiers php n'échappent pas à cette règle :
 
@@ -21,4 +21,4 @@ $username="admin";
 $password="monS3p3rP4ss1ntr0uv4bl3";
 ```
 
-Reste à se connecter pour récupérer le flag : `INEAT{v1m-0r-N4n0-or-3ma4cs}`
+Il ne reste plus qu'à se connecter pour récupérer le flag : `INEAT{v1m-0r-N4n0-or-3ma4cs}`

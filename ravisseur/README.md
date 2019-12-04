@@ -1,6 +1,6 @@
 # Ravisseur
 
-On arrive ici dans mon challenge préféré.
+On arrive ici dans mon challenge préféré. 
 
 Nous avons donc un fichier chat.zip qui, une fois dézippé, nous sort un fichier `chat`
  sans extension. Une petite inspection s'impose :
@@ -51,7 +51,7 @@ $ hexdump chat | head -n 33
 ```
 
 Puisqu'on a un disque, le plus commode serait donc de le monter.  
-Pour ça, on va regarder plus en detail ce que contient notre disque :
+Pour ça, on va regarder plus en détail ce que contient notre disque :
 
 ```text
 $ fdisk -l chat
@@ -82,8 +82,8 @@ $ lsblk | grep /tmp/test <- point de montage, facultatif puisqu'indiqué au dess
 loop22   7:22   0   127M  0 loop /tmp/test
 ```
 
-On a donc maintenant le contenu de notre clé USB. Après de fastidieuses recherches, rien de concluent.  
-On peut donc supposer que notre suspect aurait essayé de supprimer des preuves.
+On a donc maintenant le contenu de notre clé USB. Après de fastidieuses recherches, rien de concluant.  
+On peut donc supposer que notre suspect aurait essayé de supprimer les preuves.
 
 Sous linux, on peut utiliser photorec qui permet de récupérer facilement des fichiers supprimés.
 
@@ -113,6 +113,7 @@ On sait donc précisément où la photo a été prise, et on sait maintenant que
 
 ![map](map.png)
 
+##FLAG 
 `INEAT{helfrantzkirch}`
 
 [Master Boot Record]:https://fr.wikipedia.org/wiki/Master_boot_record

@@ -1,7 +1,7 @@
 # Website INEAT
 
 Après un petit tour du site, on ne trouve pas grand chose d'intéressant. On va donc utiliser un petit outil de bruteforce de répertoires.
-Personellement, j'ai utilisé `diresearch.py` dispo sur github.
+Personellement, j'ai utilisé `dirsearch.py` dispo sur github.
 
 ```
 python3 dirsearch.py -u https://website.ctf.ineat.fr -e php,asc,prk -r
@@ -41,7 +41,10 @@ done < "rockyou.txt"
 fi
 ```
 
-Il existe probablement des implémentations un peu (beaucoup) plus efficaces, mais avec un peu de patience on trouve le mot de passe : `supersexy`. On peut maintenant déchiffrer l'archive et décompresser l'archive.
+Edito:
+L'outil `gpg2john` de la suite John The Ripper permet d'extraire le hash et de le cracker avec la commande john --wordlist=rockyou.txt gpg.hash
+
+Avec un peu de patience on trouve le mot de passe : `supersexy`. On peut maintenant déchiffrer l'archive et décompresser l'archive.
 
 ```
 $  gpg --output secured-backup.tar.gz --decrypt __secured-backup.tar.gz.gpg
@@ -73,16 +76,16 @@ if( strpos($_POST["h1"], "hello") !== false > 0 && $hash == "0" ) {
 
 ```
 
-Notre mot de passe est donc hash en MD5 avant de passer dans un if un peu étrange.  
-La suite demande en réalité quelques connaissances (ou recherches) sur les bizarreries de PHP. Il faut savoir qu'il existe un bug relativement connu de PHP concernant les comparaisons de hash qu'on appelle les "Magic Hashes" (il existe probablement un nom plus sérieux que je ne connais malheureusement pas). Plutôt que tout - mal - réexpliquer, je vous laisse jetter [un coup d'oeil ici](https://www.whitehatsec.com/blog/magic-hashes/) pour en apprendre un peu plus.
+Notre mot de passe est donc hashé avec l'algorithme MD5 avant de passer dans un if un peu étrange.  
+La suite demande en réalité quelques connaissances (ou recherches) sur les bizarreries de PHP. Il faut savoir qu'il existe un bug relativement connu de PHP (feature?) concernant les comparaisons de hash qu'on appelle les "Magic Hashes" (Il s'agit ici de `Type juggling`). Plutôt que tout - mal - réexpliquer, je vous laisse jetter [un coup d'oeil ici](https://www.whitehatsec.com/blog/magic-hashes/) pour en apprendre un peu plus.
 
-Globalement pour résumer, quand un hash débute par "0e" et que - pour une raison obscule - on le compare à "0", C'est la merde. Le test passera systématiquement et notre comparaison devient innutile. Il nous faut donc trouver une chaine qui produit un MD5 qui :
+Globalement pour résumer, quand un hash débute par "0e" et que - pour une raison obscule - on le compare à "0", C'est la merde. Le test passera systématiquement et notre comparaison devient inutile. Il nous faut donc trouver une chaîne qui produit un MD5 qui :
 * Commence par "0e"
 * Contient "hello"
 
 Une bonne liste de collisions [peut-être trouvée ici](https://github.com/spaze/hashes/blob/master/md5.md).
 
-On prend par exemple `md5(0rCCFVK5hello) => 0e341458689020068004009380684426`
+On prend par exemple `md5(0rCCFVK5hello) => 0e341458689020068004009380684426`.
 Il ne nous reste plus qu'à envoyer tout ça.
 
 ```
