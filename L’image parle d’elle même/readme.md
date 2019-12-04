@@ -4,9 +4,9 @@
 
 ### Détails du challenge
 
-Points : 100
-Catégorie :  Stéganographie
-Fichier : [the_image_speaks_for_itself.bmp](https://ctf.ineat.fr/files/a9c6f402ece956ed6c0ed98e1caec601/the_image_speaks_for_itself.bmp)
+Points : 100<br/>
+Catégorie :  Stéganographie<br/>
+Fichier : [the_image_speaks_for_itself.bmp](https://ctf.ineat.fr/files/a9c6f402ece956ed6c0ed98e1caec601/the_image_speaks_for_itself.bmp)<br/>
 
 ```text
 Trouvez le flag.  
